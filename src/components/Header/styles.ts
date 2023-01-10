@@ -44,10 +44,31 @@ export const HeaderButton = styled.div<HeaderButtonProps>`
   border: none;
   border-radius: 6px;
   font-size: ${props => props.theme.textSizes['text-regular-s']};
+  cursor: inherit;
+
+  span {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    top: calc(-1.25rem / 2);
+    right: calc(-1.25rem / 2);
+    color: ${({theme}) => theme.colors["base-white"]};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
 
   ${props => css`
     background: ${props.theme.colors[`brand-${props.variant}-light`]};
     color: ${props.theme.colors[`brand-${props.variant}-dark`]};
+
+    span {
+      background: ${props.theme.colors[`brand-${props.variant}-dark`]};
+    }
   `}
 
   ${({ variant, theme }) => variant === 'purple' && css`
